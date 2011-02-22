@@ -25,7 +25,7 @@
             <div id="tagline"><?php bloginfo('description'); ?></div>
         </div>
         <ul class="nav">
-        	<li><a href="<?php echo get_option('home'); ?>" accesskey="1" <?php if( is_home()) : ?> class="active" <?php endif; ?> title="Back to Frontpage">Home</a></li>
+        	<li><a href="<?php echo get_option('home'); ?>" accesskey="1" <?php if( is_home()) : ?> class="active" <?php endif; ?> title="回首页">首页</a></li>
 			<?php
 			if( is_page() ) $curpage = $post->ID;
 			$pages = get_pages('sort_column=menu_order');

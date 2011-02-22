@@ -22,7 +22,7 @@ foreach ($options as $value) {
                <?php endwhile; ?><?php endif; ?>
                 
                 <div class="featured">
-                    <h2>Archive</h2>
+                    <h2>存档</h2>
                     <?php 
                     query_posts('showposts=' . $MagZ_archive_section_num .'&offset=3&cat=-' . $Catid . '');
 				  	if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>

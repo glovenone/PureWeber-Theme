@@ -2,7 +2,7 @@
 
         	<div class="single-main cat"> <!--Single-Main-->
         		<?php if (have_posts()) : ?>
-        			<h2>Search Result</h2>
+        			<h2>搜索结果</h2>
         		<?php while (have_posts()) : the_post(); ?>
             	<div class="list">
                         <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Read more on <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>

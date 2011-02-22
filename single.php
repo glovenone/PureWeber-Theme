@@ -4,7 +4,7 @@
         		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         		
             	<h2><?php the_title(); ?></h2>
-                <div class="author"><em>Oleh</em>: <strong><?php the_author() ?></strong></div>
+                <div class="author">作者: <strong><?php the_author() ?></strong></div>
                 <div class="date"><?php the_date(); ?></div>
                 <hr />
                 
@@ -33,29 +33,29 @@
             
             <div class="post-data">
         
-						Category: <?php the_category(', ') ?> | <?php post_comments_feed_link('RSS 2.0'); ?>
+						分类: <?php the_category(', ') ?> | <?php post_comments_feed_link('RSS 2.0'); ?>
 
 						<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 							// Both Comments and Pings are open ?>
-							| <a href="#respond">Give a Comment</a> | <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a>
+							| <a href="#respond">我说两句</a> | <a href="<?php trackback_url(); ?>" rel="trackback">Trackback</a>
 
 						<?php } elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 							// Only Pings are Open ?>
-							Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
+							评论已关闭，您可以 <a href="<?php trackback_url(); ?> " rel="trackback">Trackback</a> 此文.
 
 						<?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Comments are open, Pings are not ?>
-							You can skip to the end and leave a response. Pinging is currently not allowed.
+							| <a href="#respond">我说两句</a>
 
 						<?php } elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Neither Comments, nor Pings are open ?>
-							Both comments and pings are currently closed.
+							评论已关闭 | Trackback 已关闭
 
-						<?php } edit_post_link('Edit this entry','','.'); ?>
+						<?php } edit_post_link('编辑此文','','.'); ?>
             </div>
             
             <div class="comments">
-            	<h4><?php comments_number('No Comments', 'One Comments', '% Comments' );?></h4>
+            	<h4><?php comments_number('还没有人评论此文', '1 条评论 ', '% 条评论' );?></h4>
             	
 
             	<?php comments_template(); ?>
