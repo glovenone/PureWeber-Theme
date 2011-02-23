@@ -16,7 +16,8 @@ foreach ($options as $value) {
                     <div class="author"><em>By</em>: <strong><?php the_author() ?></strong></div>
                     <hr />
                     <p>
-                    	 <?php the_content_rss('', TRUE, '', 80); ?> 
+                    	 <?php //the_content_rss('', TRUE, '', 80); ?> 
+			 <?php the_excerpt()?>
                     </p>
             	</div><!--post-->
                <?php endwhile; ?><?php endif; ?>
@@ -39,7 +40,7 @@ foreach ($options as $value) {
                 	<img src="<?php bloginfo(template_url);?>/images/banner.jpg" width="658" height="246" />
                 </div>
                 <div class="main"><!--main-->
-                	<?php query_posts('showposts=' . $MagZ_main_section_num . '&category_name=' . $MagZ_main_section . '');
+                	<?php query_posts('showposts=' . $MagZ_main_section_num . '&cat=' . $Catid . '');
 				  	if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
                 	<div class="post"><!--post-->
                         <div class="category"><?php the_category(', '); ?></div>
@@ -47,14 +48,15 @@ foreach ($options as $value) {
                         <div class="author"><em>By</em>: <strong><?php the_author() ?></strong></div>
                         <hr />
                         <p>
-                            <?php the_content_rss('', TRUE, '', 140); ?> 
+                            <?php //the_content_rss('', TRUE, '', 140); ?> 
+			    <?php the_excerpt()?>
                         </p>
             		</div><!--post-->
                     <?php endwhile; ?><?php endif; ?>
                     
                     <div class="featured">
                     	<h2><?php echo $MagZ_feat_section ?></h2>
-                    	<?php query_posts('showposts=' . $MagZ_feat_section_num . '&category_name=' . $MagZ_feat_section . '');
+                    	<?php query_posts('showposts=' . $MagZ_feat_section_num . '&cat=' . $Featid . '');
 				  		if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
                         <div class="list">
                         

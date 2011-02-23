@@ -56,7 +56,7 @@ acronym {
 }
 blockquote {
 	padding: 20px 50px;
-	font: italic 14px Georgia, "Times New Roman", Times, serif;
+	font: normal 14px Georgia, "Times New Roman", Times, serif;
 	min-height: 70px;
 	line-height: 18px;
 	background: url(images/blockquote.gif) no-repeat top left;
@@ -366,6 +366,7 @@ ul.nav li a:hover, ul.nav li a.active {
 }
 .navigation-post {
 	padding: 25px 10px 25px 10px;
+	clear:both;
 }
 .navigation-post a {
 	font-weight: bold;
@@ -522,6 +523,7 @@ p.tags {
 	padding: 10px;
 	background: #fcfcfc;
 	margin-top: 10px;
+	clear:both;
 }
 .footer {
 	background: #fff url(images/wp.gif) no-repeat top left;
